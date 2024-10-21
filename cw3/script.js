@@ -136,3 +136,116 @@ while(j >= 8) {
     console.log(j);
     j--;
 }
+
+console.log(`------`);
+
+
+//Выведите столбец чисел от 89 до 11 - воспользуйтесь циклом while и отделите числа тегом <br /> друг от друга, чтобы получить столбец, а не строку.
+
+let m = 89;
+
+while(m >= 11) {
+    document.write(m + "<br/>");
+
+    m--;
+}
+
+console.log(`------`);
+
+
+//Выведите на экран числа от 15 до 78 исключая четные
+
+for(let i = 15; i <= 78; i++) {
+    if (i % 2 == 0) continue;
+
+    console.log(i);
+}
+
+console.log(`------`);
+
+
+//Необходимо вывести на экран числа от 50 до 1 с шагом 5 и 10.
+
+for(let j = 50; j >= 1; j -= 5) {
+    console.log(j);
+}
+
+for(let j = 50; j >= 1; j -= 10) {
+    console.log(j);
+}
+
+console.log(`------`);
+
+
+//Выведите в консоль фразу "Hello World!" в обратном порядке.
+
+let str = "Hello World!";
+let n = str.length - 1;
+
+while(n >= 0) {
+    console.log(str[n]);
+
+    n--;
+} //вывод символов
+
+let strReverse = '';
+
+for(let i = str.length - 1; i >= 0; i--) {
+    // console.log(str[i]);
+    strReverse += str[i];
+}
+
+console.log(strReverse); //вывод фразы
+
+console.log(`------`);
+
+
+//Написать с помощью цикла while «переворот» числа. Другими словами, нужно создать новое число, у которого цифры шли бы в обратном порядке (например: 472 -> 274).
+
+// let num = '472';
+// let numReverse = '';
+// let k = num.length - 1;
+
+// while(k >= 0) {
+//     numReverse += num[k];
+//     k--;
+// }
+
+// console.log(+numReverse);
+
+let num = 12345;
+num = String(num);
+let k = (num.length - 1);
+let numReverse = '';
+
+while(k >= 0) {
+    numReverse += num[k];
+
+    k--;
+}
+
+console.log(+numReverse);
+
+console.log('-------');
+
+
+//Найти сумму чисел от 1 до 20
+
+let sum = 0;
+
+for(i = 1; i <= 20; i++) {
+    sum += i;
+}
+
+console.log(sum);
+
+console.log('-------');
+
+
+//Дано число n=1000. Делите его на 2 столько раз, пока результат деления не станет меньше 50. Какое число получится?
+
+for(let n = 1000; ; n /= 2) {
+    if (n < 50) break;
+
+    console.log(n);
+}
