@@ -96,6 +96,43 @@ for (let i = 0; i < arrNames.length; i++) {
 let arr5 = [44, 15, -10, 2, 2, 2, 5, -6, 23],
     r = false;
 
-for (let i = 0; i < arr5; i++) {
-    if ()
+for (let i = 0; i < arr5.length; i++) {
+    if (arr5[i] == arr5[i + 1] && arr5[i + 1] == arr5[i + 2]) {
+        r = true;
+    }
+}
+
+console.log(r);
+
+// Заданы два массива. Один содержит наименование услуг, а другой – расценки за эти услуги. Удалите из обоих массивов все элементы, которые по цене равняются n  рублей. Выведите оба массива и удаленные элементы.
+
+/*1. Создаем два массива с услугами и ценами.
+2. Задаем значение переменной N с ценой, товары по которой будем удалять.
+3. Создаем цикл для массива price
+4. Выполняем поиск значения N в массиве price. В случае если эл. найден, то мы его удалям из массива, запоминая его index.
+5. Сохраняем элемент по index в переменную для вывода на экран.
+6. Из массива services удаляем элемент под индексом из index.
+7. Выводим оба массива и удаленный элемент ввиде: 
+
+"Услуга 1: $4"
+"Услуга 2: $23"
+"Удалена Услуга 5: $82"*/
+
+let n = 400;
+    services = ['Car-wash', 'Web-site creation', 'Cleaning', 'Catering'],
+    prices = [200, 1500, 400, 800];
+
+let indexPrice = prices.indexOf(n);
+
+if (indexPrice) {
+    let servicesDel = services[indexPrice];
+
+    services.splice(indexPrice, 1);
+    prices.splice(indexPrice, 1);
+
+    for (let i = 0; i < services.length; i++) {
+        console.log(`${services[i]}: $${prices[i]}\n`);
+    }
+
+    console.log(`Удалено: ${servicesDel}: $${n}`);
 }
